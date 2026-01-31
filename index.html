@@ -1,12 +1,55 @@
 <!DOCTYPE html>
+<!--
+  This tells the browser:
+  "This document is HTML5."
+  It should ALWAYS be the very first line.
+-->
+
 <html lang="en">
+<!--
+  The <html> tag wraps the entire page.
+  lang="en" tells browsers and screen readers that the page is in English.
+-->
+
 <head>
+  <!--
+    The <head> contains information ABOUT the page,
+    not content that shows up visually.
+  -->
+
   <meta charset="UTF-8" />
+  <!--
+    Sets the character encoding.
+    UTF-8 supports basically all modern characters and emojis.
+  -->
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!--
+    Makes the site responsive on phones and tablets.
+    Without this, mobile layouts look broken.
+  -->
+
   <title>Books & Banterr</title>
+  <!--
+    The text shown in the browser tab.
+  -->
+
   <meta name="description" content="Official website for Books & Banterr Book Club" />
+  <!--
+    Short description used by search engines (SEO).
+  -->
+
   <style>
+    /*
+      Everything inside <style> is CSS.
+      CSS controls how the page looks.
+    */
+
     :root {
+      /*
+        :root is the top-level element of the page.
+        We define CSS variables here so we can reuse colors easily.
+      */
       --bg: #faf7f2;
       --card: #ffffff;
       --text: #2b2b2b;
@@ -15,18 +58,28 @@
     }
 
     * {
+      /*
+        The * selector means "every element".
+        box-sizing: border-box makes layouts easier to reason about.
+      */
       box-sizing: border-box;
     }
 
     body {
-      margin: 0;
+      /*
+        Styles applied to the whole page.
+      */
+      margin: 0; /* Removes default browser spacing */
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--bg);
+      background: var(--bg); /* Uses the CSS variable */
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.6; /* Controls vertical spacing between lines of text */
     }
 
     header {
+      /*
+        Styles for the top hero section.
+      */
       background: linear-gradient(135deg, #fd5252, #f1e063);
       color: white;
       padding: 4rem 1.5rem;
@@ -40,40 +93,61 @@
 
     header p {
       font-size: 1.1rem;
-      opacity: 0.95;
+      opacity: 0.95; /* Slight transparency */
     }
 
     nav {
+      /*
+        Navigation bar styles.
+      */
       background: white;
       border-bottom: 1px solid #e5e7eb;
+
       position: sticky;
+      /*
+        Sticky means:
+        it stays at the top when you scroll.
+      */
       top: 0;
-      z-index: 10;
+      z-index: 10; /* Keeps it above other content */
     }
 
     nav ul {
-      list-style: none;
+      /*
+        Styles for the list inside the nav.
+      */
+      list-style: none; /* Removes bullet points */
       margin: 0;
       padding: 0.75rem 1rem;
-      display: flex;
+
+      display: flex; /* Puts items in a row */
       justify-content: center;
-      gap: 1.5rem;
+      gap: 1.5rem; /* Space between links */
     }
 
     nav a {
-      text-decoration: none;
+      /*
+        Styles for navigation links.
+      */
+      text-decoration: none; /* Removes underline */
       color: var(--text);
       font-weight: 500;
     }
 
     nav a:hover {
+      /*
+        Hover effect when the mouse is over a link.
+      */
       color: var(--accent);
     }
 
     section {
+      /*
+        Shared styles for all <section> elements.
+      */
       padding: 3rem 1.5rem;
-      max-width: 1000px;
-      margin: 0 auto;
+      max-width: 1000px; /* Keeps content from getting too wide */
+      margin: 0 auto; /* Centers the section horizontally */
     }
 
     section h2 {
@@ -82,28 +156,45 @@
     }
 
     .cards {
+      /*
+        A grid layout used for card groups.
+      */
       display: grid;
+
+      /*
+        Automatically fits as many columns as possible.
+        Each column is at least 250px wide.
+      */
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 1.5rem;
       margin-top: 2rem;
     }
 
     .card {
+      /*
+        Individual card styling.
+      */
       background: var(--card);
       padding: 1.5rem;
-      border-radius: 1rem;
+      border-radius: 1rem; /* Rounded corners */
       box-shadow: 0 10px 25px rgba(0,0,0,0.05);
     }
 
     .card h3 {
-      margin-top: 0;
+      margin-top: 0; /* Removes default spacing at top */
     }
 
     .muted {
+      /*
+        Used for less-important text.
+      */
       color: var(--muted);
     }
 
     .button {
+      /*
+        Styles links to look like buttons.
+      */
       display: inline-block;
       margin-top: 1rem;
       padding: 0.6rem 1.1rem;
@@ -119,6 +210,9 @@
     }
 
     footer {
+      /*
+        Footer styles.
+      */
       background: #111827;
       color: #e5e7eb;
       text-align: center;
@@ -132,7 +226,11 @@
     }
   </style>
 </head>
+
 <body>
+  <!--
+    Everything inside <body> is what the user sees.
+  -->
 
   <header>
     <h1>Books & Banterr</h1>
@@ -140,6 +238,7 @@
   </header>
 
   <nav>
+    <!-- Navigation links that jump to sections on the page -->
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#current">Current Book</a></li>
@@ -149,6 +248,9 @@
   </nav>
 
   <section id="about">
+    <!--
+      id="about" allows the nav link to scroll here.
+    -->
     <h2>About Us</h2>
     <p>
       Books & Banterr is a relaxed, welcoming book club that meets regularly to
@@ -159,8 +261,12 @@
 
   <section id="current">
     <h2>Current Read</h2>
+
     <div class="cards">
+      <!-- Card container -->
+
       <div class="card">
+        <!-- Individual card -->
         <h3>📖 Book Title Here</h3>
         <p class="muted">by Author Name</p>
         <p>
@@ -173,6 +279,7 @@
 
   <section id="schedule">
     <h2>Meeting Schedule</h2>
+
     <div class="cards">
       <div class="card">
         <h3>Next Meeting</h3>
@@ -180,6 +287,7 @@
         <p><strong>Time:</strong> 7:00 PM</p>
         <p><strong>Location:</strong> Online (Zoom)</p>
       </div>
+
       <div class="card">
         <h3>How It Works</h3>
         <p>
@@ -196,6 +304,8 @@
       Interested in joining? We'd love to have you. Click below to sign up or get
       more information.
     </p>
+
+    <!-- Call-to-action button -->
     <a class="button" href="#">Join the Book Club</a>
   </section>
 
