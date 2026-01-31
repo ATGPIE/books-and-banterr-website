@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Cozy Readers Book Club</title>
+  <meta name="description" content="Official website for The Cozy Readers Book Club" />
+  <style>
+    :root {
+      --bg: #faf7f2;
+      --card: #ffffff;
+      --text: #2b2b2b;
+      --muted: #6b6b6b;
+      --accent: #8b5cf6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #8b5cf6, #6366f1);
+      color: white;
+      padding: 4rem 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.75rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.95;
+    }
+
+    nav {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0.75rem 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      padding: 3rem 1.5rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .card {
+      background: var(--card);
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .card h3 {
+      margin-top: 0;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.1rem;
+      background: var(--accent);
+      color: white;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .button:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      background: #111827;
+      color: #e5e7eb;
+      text-align: center;
+      padding: 2rem 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #c7d2fe;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>The Cozy Readers</h1>
+    <p>A friendly book club for thoughtful reads and great conversations</p>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#current">Current Book</a></li>
+      <li><a href="#schedule">Schedule</a></li>
+      <li><a href="#join">Join</a></li>
+    </ul>
+  </nav>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      The Cozy Readers is a relaxed, welcoming book club that meets regularly to
+      talk about books we love (and sometimes love to argue about). All genres,
+      all backgrounds, all opinions welcome.
+    </p>
+  </section>
+
+  <section id="current">
+    <h2>Current Read</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>📖 Book Title Here</h3>
+        <p class="muted">by Author Name</p>
+        <p>
+          A short description of the current book. What it's about, why it was
+          chosen, or what themes to look out for.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule">
+    <h2>Meeting Schedule</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Next Meeting</h3>
+        <p><strong>Date:</strong> March 15, 2026</p>
+        <p><strong>Time:</strong> 7:00 PM</p>
+        <p><strong>Location:</strong> Online (Zoom)</p>
+      </div>
+      <div class="card">
+        <h3>How It Works</h3>
+        <p>
+          We usually meet once a month. Half the meeting is casual discussion,
+          half is structured questions. Snacks encouraged.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="join">
+    <h2>Join the Club</h2>
+    <p>
+      Interested in joining? We'd love to have you. Click below to sign up or get
+      more information.
+    </p>
+    <a class="button" href="#">Join the Book Club</a>
+  </section>
+
+  <footer>
+    <p>
+      © 2026 The Cozy Readers Book Club · Hosted on GitHub Pages
+    </p>
+  </footer>
+
+</body>
+</html>
